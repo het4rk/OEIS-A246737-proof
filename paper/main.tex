@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,tabularx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\usepackage{array}
+\def\UrlBreaks{\do0\do1\do2\do3\do4\do5\do6\do7\do8\do9\do a\do b\do c\do d\do e\do f\do/\do.\do-}
+\emergencystretch=3em
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\lean}[1]{{\ttfamily\def\_{\textunderscore\allowbreak}#1}}
+\author{Hetark Shah, AI-assisted by Grok}
+\date{October 12, 2026}
+\title{A proof of Hardin's empirical column recurrences for OEIS A246737, formalized in Lean~4}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $T(n,k)$ be the number of arrays of length $n+4$ over $\{0,\dots,k\}$ in which no two entries among any five consecutive terms sum to exactly $k$ (OEIS A246737~\cite{oeis}). R.~H.~Hardin recorded column recurrences for $k\le 9$ as ``Empirical'' in 2014. We prove a recurrence of order $8$ valid for every odd $k$ and one of order $24$ valid for every even $k$, both with coefficients polynomial in $k$, and deduce all of Hardin's column formulas for $k=1,\dots,9$ (for $k=8$, where the entry gives only the order, we give the explicit recurrence). The proof is a transfer-matrix argument on $35$ ``types'' of quadruples, uniform in $k$, and is machine-checked in Lean~4 with Mathlib~\cite{mathlib}: no \texttt{sorry}, no \texttt{native\_decide}, and only the axioms \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}.
+\end{abstract}
+
+\section{Introduction}
+OEIS A246737 (R.~H.~Hardin, 2014) tabulates $T(n,k)$, the number of words $w_1\cdots w_{n+4}$ over $\{0,\dots,k\}$ with $w_i+w_j\ne k$ whenever $1\le j-i\le 4$. With $a(n)=T(n,k)$, the entry lists as ``Empirical for column $k$'':
+\begin{align*}
+k=1&: a(n)=a(n-1),\qquad k=2: a(n)=a(n-1)+a(n-5),\qquad k=3: a(n)=2a(n-1)+a(n-4),\\
+k=5&: a(n)=3a(n-1)+a(n-2)+a(n-3)+5a(n-4)+a(n-5)-a(n-6)-a(n-7),\\
+k=7&: a(n)=4a(n-1)+4a(n-2)+4a(n-3)+18a(n-4)+12a(n-5)-4a(n-7)-a(n-8),\\
+k=9&: a(n)=6a(n-1)+4a(n-2)+6a(n-3)+38a(n-4)+18a(n-5)-6a(n-7)-a(n-8),
+\end{align*}
+and ``order 16, 23, 24'' for $k=4,6,8$; the $k=4$ and $k=6$ recurrences are written out in the column entries A246733 and A246735~\cite{oeisrel}. We prove all of them, as consequences of two recurrences that hold for all $k$ of a given parity.
+
+\section{Related work}
+The table and its recurrences were contributed by Hardin~\cite{oeis}. Columns $k=3,\dots,7$ are A246732--A246736, where Colin Barker (2018) added empirical generating functions for some columns, and rows $1,2$ are A246738, A246739~\cite{oeisrel}. That each column satisfies \emph{some} linear recurrence is immediate from the transfer-matrix method (Stanley~\cite{stanley}, \S4.7); the content here is the explicit recurrences, uniform in $k$, whose order does not grow with $k$ although the naive transfer matrix has $\Theta(k^4)$ states. All these formulas are marked empirical in the OEIS, and an OEIS and web search on October 12, 2026 found no proof. The method extends the type reductions we used for the three- and four-term analogues A245995~\cite{a245995} and A246479~\cite{a246479}; what is new here is the $35$-type reduction for windows of five, the resulting general recurrences, and the machine-checked formalization in Lean~4~\cite{lean4} and Mathlib~\cite{mathlib}.
+
+\section{Statement}
+\begin{theorem}\label{thm:main}
+For all $n\ge0$ (here $T(0,k)$ counts words of length $4$), over the integers:
+\begin{enumerate}
+\item if $k$ is odd,
+\begin{multline*}
+T(n+8)=(k-3)T(n+7)+4T(n+6)+(k-3)T(n+5)+(k^2-6k+11)T(n+4)\\+(3k-9)T(n+3)-(k-3)T(n+1)-T(n);
+\end{multline*}
+\item if $k$ is even, $T(n+24)=\sum_{i=0}^{23}c_i(k)\,T(n+i)$ with the polynomials $c_i\in\mathbb Z[k]$ of degree at most $5$ listed in Table~\ref{tab:even}.
+\end{enumerate}
+\end{theorem}
+\begin{table}[ht]\centering\small
+\begin{tabular}{@{}ll@{}}\toprule $i$ & $c_i(k)$\\\midrule
+23 & $k-4$\\ 22 & $4$\\ 21 & $k-4$\\ 20 & $k^2-8k+18$\\
+19 & $k^4-12k^3+66k^2-177k+189$\\ 18 & $6k^3-51k^2+178k-232$\\
+17 & $2k^4-26k^3+142k^2-377k+397$\\ 16 & $k^5-17k^4+129k^3-532k^2+1174k-1093$\\
+15 & $3k^4-39k^3+215k^2-589k+643$\\ 14 & $-2k^4+23k^3-91k^2+138k-90$\\
+13 & $-k^5+14k^4-73k^3+157k^2-94k-49$\\ 12 & $3k^4-43k^3+232k^2-550k+456$\\
+11 & $k^4+6k^3-121k^2+420k-365$\\ 10 & $k^4-12k^3+54k^2-98k+50$\\
+9 & $k^4-17k^3+101k^2-242k+200$\\ 8 & $k^5-15k^4+88k^3-257k^2+387k-239$\\
+7 & $3k^4-35k^3+143k^2-237k+131$\\ 6 & $3k^2-22k+32$\\
+5 & $-k^4+13k^3-60k^2+115k-79$\\ 4 & $-k^3+9k^2-24k+17$\\
+3 & $3-k$\\ 2 & $0$\\ 1 & $k-3$\\ 0 & $1$\\\bottomrule
+\end{tabular}
+\caption{Coefficients of the even-$k$ recurrence (Lean: \lean{T\_even\_int}).}\label{tab:even}
+\end{table}
+\begin{corollary}\label{cor:cols}
+All of Hardin's column recurrences for $k=1,\dots,7$ and $k=9$ hold verbatim (OEIS offset, wherever the right side is defined). For $k=8$, $a(n)=4a(n-1)+4a(n-2)+4a(n-3)+18a(n-4)+949a(n-5)+1000a(n-6)+1349a(n-7)+3435a(n-8)+2011a(n-9)-1226a(n-10)-3553a(n-11)+1176a(n-12)+2419a(n-13)+674a(n-14)+120a(n-15)+2793a(n-16)+1755a(n-17)+48a(n-18)-439a(n-19)-111a(n-20)-5a(n-21)+5a(n-23)+a(n-24)$, of order $24$ as recorded by Hardin.
+\end{corollary}
+
+\section{Proof}
+Write $\bar a=k-a$; a pair at distance at most $4$ is forbidden iff its letters are $a,\bar a$. Let $\varepsilon=1$ if $k$ is even and $0$ otherwise; for even $k$, $h=k/2$ is the unique letter with $\bar h=h$. Let $N_L(v_0,v_1,v_2,v_3)$ be the number of good words of length $L+4$ beginning $v_0v_1v_2v_3$.
+
+\textbf{Step 1 (prepending a letter).} A word $c\,v$ is good iff $v$ is good and $c+v_i\ne k$ for $i=0,1,2,3$, so
+\[N_{L+1}(c,x,y,z)=[\,x,y,z\ne\bar c\,]\Bigl(\sum_a N_L(x,y,z,a)-N_L(x,y,z,\bar c)\Bigr).\]
+
+\textbf{Step 2 ($35$ types).} A quadruple is \emph{valid} if no two of its letters are complementary. Classify a valid quadruple by its equality pattern (a restricted growth string of length $4$; there are $15$) together with the block, if any, holding the middle letter $h$ (only a singleton block can, since $h+h=k$). This gives $35$ types $t_0,\dots,t_{34}$. By induction on $L$, $N_L$ depends only on the type ($0$ if invalid), with $N_0\equiv1$: in the sum over $a$, the letters $a\in\{\bar x,\bar y,\bar z\}$ contribute $0$, the letters $a\in\{x,y,z,h\}$ contribute single type values, and all remaining letters (a number linear in $k$ and $\varepsilon$) give one common type; the correction term $N_L(x,y,z,\bar c)$ has a type determined by that of $(c,x,y,z)$. This yields a linear step $s\mapsto M s$ on $\mathbb Z^{35}$ whose entries are of the form $1$, $\varepsilon$, $\varepsilon-1$ or $k-\varepsilon-j$ ($1\le j\le 6$); see \lean{step} in \lean{StepGen.lean}.
+
+\textbf{Step 3 (total).} Summing successively over $v_3,v_2,v_1,v_0$ by the same counting gives $T(L,k)=F(M^L\mathbf 1)$ for an explicit linear functional $F$ with coefficients polynomial in $k,\varepsilon$ (\lean{lv0}).
+
+\textbf{Step 4 (recurrences).} Theorem~\ref{thm:main} is the statement $\sum_i c_i\,F\circ M^i=F\circ M^{d}$. We write $F\circ M^i=\langle g_i,\cdot\rangle$ with explicit coefficient vectors $g_i\in\mathbb Z[k]^{35}$, check $M^{\top}g_i=g_{i+1}$ for each $i$ (35 univariate polynomial identities per step; for even $k$ the entries of $g_{24}$ have degree $26$), and check $g_d=\sum_i c_i g_i$ componentwise. Each identity is verified in Lean by \texttt{ring}. Hardin's formulas for $k=1,\dots,6$ are checked the same way with $k$ fixed, those for $k=7,9$ are specialisations of the odd case, and $k=8$ of the even case.
+
+\textbf{Numerical check.} The recursion reproduces all $1661$ terms of Hardin's b-file for A246737 (\texttt{scripts/check\_bfile.py}).
+
+\begin{remark}
+Both recurrences hold for every $k$ of the given parity as identities over $\mathbb Z$; they are stated over $\mathbb Z$ because several coefficients are negative. The order-$24$ recurrence is not claimed to be minimal; for $k=4$ and $k=6$ Hardin's recurrences have orders $16$ and $23$, and these are proved separately with $k$ fixed.
+\end{remark}
+
+\section{Formalization}
+All declarations are in namespace \lean{A246737}; see Table~\ref{tab:lean}.
+\begin{table}[ht]\centering
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}\toprule
+Lean name (file) & Statement \\\midrule
+\lean{Good}, \lean{T}, \lean{N} (\lean{Basic.lean}) & OEIS condition (natural-number sums); $T(n,k)$; $N_L$ \\
+\lean{good\_cons}, \lean{N\_succ} & Step~1 \\
+\lean{St}, \lean{lv4}, \dots, \lean{lv0}, \lean{eps} (\lean{Types.lean}); \lean{sum3}, \dots, \lean{sum0} (\lean{Sums.lean}) & types, partial sums \\
+\lean{step}, \lean{typ\_step} (\lean{StepGen.lean}); \lean{N\_eq\_typ}, \lean{T\_eq\_F} (\lean{Step.lean}) & Steps~2--3 \\
+\lean{Go0}--\lean{Go8} (\lean{FormsOdd.lean}), \lean{ge0}--\lean{ge24}, \lean{pull} (\lean{EvenBase.lean}, \lean{EvenChain0--4.lean}), \lean{Ge\_rec} (\lean{FormsEven.lean}), \lean{FormsSmall.lean} & Step~4 \\
+\lean{T\_odd\_int}, \lean{T\_even\_int} (\lean{Main.lean}) & Theorem~\ref{thm:main} \\
+\lean{T\_col1}--\lean{T\_col9} & Corollary~\ref{cor:cols}, OEIS form \\\bottomrule
+\end{tabularx}
+\caption{Theorems and their Lean names.}\label{tab:lean}
+\end{table}
+
+\section{Reproducibility}
+\begin{itemize}
+\item Source code: \url{https://github.com/het4rk/OEIS-A246737-proof}. The Lean project is in \texttt{A246737/}.
+\item Toolchain: \texttt{leanprover/lean4:v4.35.0-rc4}; Mathlib tag \texttt{v4.35.0-rc4}, pinned in \texttt{lake-manifest.json}.
+\item Build: \texttt{cd A246737; lake exe cache get; lake build; lake env lean Axioms.lean}.
+\item Attestation: \texttt{verification/} contains the build log, the axiom output and \texttt{VERIFICATION.md}. Continuous integration rebuilds on every push, rejects \texttt{sorry} and non-standard axioms, and uploads the logs.
+\end{itemize}
+
+\section{Limitations}
+This is a transfer-matrix computation; its interest is that it turns a family of empirical OEIS formulas into theorems with a machine-checked proof, and supplies recurrences uniform in $k$. We do not prove minimality of the recurrences, and we do not treat Hardin's row recurrences, Barker's empirical generating functions (which follow from the recurrences and initial terms) or the conjectured row closed forms in A246738, A246739. Column 2 is listed as A174469$(n+18)$ in the entry; we do not address that identification.
+
+\begin{thebibliography}{9}
+\bibitem{oeis} R.~H.~Hardin, \emph{A246737: $T(n,k)$ = number of length $n+4$ $0..k$ arrays with no pair in any consecutive five terms totalling exactly $k$}, The On-Line Encyclopedia of Integer Sequences, 2014, \url{https://oeis.org/A246737}.
+\bibitem{oeisrel} R.~H.~Hardin, C.~Barker, \emph{A246732--A246736} (columns $3$--$7$) and \emph{A246738, A246739} (rows $1,2$), The On-Line Encyclopedia of Integer Sequences, \url{https://oeis.org/A246733}.
+\bibitem{a245995} H.~Shah (AI-assisted by Grok), \emph{A proof of Hardin's empirical column recurrences for OEIS A245995, formalized in Lean~4}, 2026, \url{https://github.com/het4rk/OEIS-A245995-proof}.
+\bibitem{a246479} H.~Shah (AI-assisted by Grok), \emph{A proof of the conjectured column recurrences for OEIS A246479, formalized in Lean~4}, 2026, \url{https://github.com/het4rk/OEIS-A246479-proof}.
+\bibitem{stanley} R.~P.~Stanley, \emph{Enumerative Combinatorics, Vol.~1}, 2nd ed., Cambridge University Press, 2012.
+\bibitem{mathlib} The mathlib Community, \emph{The Lean mathematical library}, in Proc.\ CPP 2020, ACM, 367--381.
+\bibitem{lean4} L.~de Moura, S.~Ullrich, \emph{The Lean 4 theorem prover and programming language}, in CADE-28, LNCS 12699, Springer, 2021, 625--635.
+\end{thebibliography}
+\end{document}

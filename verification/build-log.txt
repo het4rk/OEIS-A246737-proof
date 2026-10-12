@@ -1,0 +1,399 @@
+⚠ [9020/9036] Replayed A246737.Basic
+warning: A246737/Basic.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: A246737/Basic.lean:61:78: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: A246737/Basic.lean:61:78: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9022/9036] Replayed A246737.Sums
+warning: A246737/Sums.lean:28:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:45:106: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:55:118: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:76:106: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:86:118: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:106:106: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:119:118: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:145:236: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:158:236: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:169:236: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:179:248: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:202:42: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:218:104: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:229:104: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:239:116: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:256:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/Sums.lean:265:40: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9023/9036] Replayed A246737.StepGen
+warning: A246737/StepGen.lean:160:112: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:163:124: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:175:242: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:179:242: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:180:254: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:211:242: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:215:242: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:216:254: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:230:242: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:234:242: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:237:254: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:257:428: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:263:428: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:267:428: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:269:428: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: A246737/StepGen.lean:270:440: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [9032/9036] Replayed A246737.FormsEven
+warning: A246737/FormsEven.lean:11:54: This simp argument is unused:
+  ge2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ev, addS, smulS, ge24, ge0, ge1, ge3, ge4, ge5, ge6, ge7, ge8, ge9, ge10, ge11, ge12, ge13, ge14,
+    ge15, ge16, ge17, ge18, ge19, ge20, ge21, ge22, ge23]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/FormsEven.lean:14:23: This simp argument is unused:
+  Ge2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Ge0, Ge1, Ge3, Ge4, Ge5, Ge6, Ge7, Ge8, Ge9, Ge10, Ge11, Ge12, Ge13, Ge14, Ge15, Ge16, Ge17, Ge18,
+    Ge19, Ge20, Ge21, Ge22, Ge23, Ge24]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9033/9036] Replayed A246737.FormsSmall
+warning: A246737/FormsSmall.lean:20:6: The declaration 'G1__base' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:23:6: The declaration 'G1__chain0' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:75:6: The declaration 'G2__base' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:78:6: The declaration 'G2__chain0' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:82:6: The declaration 'G2__chain1' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:86:6: The declaration 'G2__chain2' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:90:6: The declaration 'G2__chain3' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:94:6: The declaration 'G2__chain4' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:153:6: The declaration 'G3__base' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:156:6: The declaration 'G3__chain0' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:160:6: The declaration 'G3__chain1' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:164:6: The declaration 'G3__chain2' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:168:6: The declaration 'G3__chain3' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:631:6: The declaration 'G4__base' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:634:6: The declaration 'G4__chain0' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:638:6: The declaration 'G4__chain1' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:642:6: The declaration 'G4__chain2' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:646:6: The declaration 'G4__chain3' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:650:6: The declaration 'G4__chain4' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:654:6: The declaration 'G4__chain5' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:658:6: The declaration 'G4__chain6' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:662:6: The declaration 'G4__chain7' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:666:6: The declaration 'G4__chain8' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:670:6: The declaration 'G4__chain9' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:674:6: The declaration 'G4__chain10' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:678:6: The declaration 'G4__chain11' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:682:6: The declaration 'G4__chain12' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:686:6: The declaration 'G4__chain13' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:690:6: The declaration 'G4__chain14' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:694:6: The declaration 'G4__chain15' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:834:6: The declaration 'G5__base' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:837:6: The declaration 'G5__chain0' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:841:6: The declaration 'G5__chain1' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:845:6: The declaration 'G5__chain2' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:849:6: The declaration 'G5__chain3' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:853:6: The declaration 'G5__chain4' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:857:6: The declaration 'G5__chain5' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:861:6: The declaration 'G5__chain6' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1753:6: The declaration 'G6__base' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1756:6: The declaration 'G6__chain0' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1760:6: The declaration 'G6__chain1' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1764:6: The declaration 'G6__chain2' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1768:6: The declaration 'G6__chain3' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1772:6: The declaration 'G6__chain4' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1776:6: The declaration 'G6__chain5' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1780:6: The declaration 'G6__chain6' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1784:6: The declaration 'G6__chain7' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1788:6: The declaration 'G6__chain8' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1792:6: The declaration 'G6__chain9' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1796:6: The declaration 'G6__chain10' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1800:6: The declaration 'G6__chain11' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1804:6: The declaration 'G6__chain12' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1808:6: The declaration 'G6__chain13' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1812:6: The declaration 'G6__chain14' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1816:6: The declaration 'G6__chain15' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1820:6: The declaration 'G6__chain16' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1824:6: The declaration 'G6__chain17' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1828:6: The declaration 'G6__chain18' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1832:6: The declaration 'G6__chain19' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1836:6: The declaration 'G6__chain20' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1840:6: The declaration 'G6__chain21' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+warning: A246737/FormsSmall.lean:1844:6: The declaration 'G6__chain22' contains '__', which does not follow the mathlib naming conventions. Consider using single underscores instead.
+
+Note: This linter can be disabled with `set_option linter.style.nameCheck false`
+⚠ [9034/9036] Built A246737.Main (11s)
+warning: A246737/Main.lean:34:23: This simp argument is unused:
+  Go2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Go0, Go1, Go3, Go4, Go5, Go6, Go7, Go8]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:59:19: This simp argument is unused:
+  G2_1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G2_0, G2_2, G2_3, G2_4, G2_5]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:59:25: This simp argument is unused:
+  G2_2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G2_0, G2_1, G2_3, G2_4, G2_5]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:59:31: This simp argument is unused:
+  G2_3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G2_0, G2_1, G2_2, G2_4, G2_5]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:68:19: This simp argument is unused:
+  G3_1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G3_0, G3_2, G3_3, G3_4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:68:25: This simp argument is unused:
+  G3_2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G3_0, G3_1, G3_3, G3_4]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:77:25: This simp argument is unused:
+  G4_2
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G4_0, G4_1, G4_3, G4_4, G4_5, G4_6, G4_7, G4_8, G4_9, G4_10, G4_11, G4_12, G4_13, G4_14, G4_15,
+    G4_16]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:77:31: This simp argument is unused:
+  G4_3
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G4_0, G4_1, G4_2, G4_4, G4_5, G4_6, G4_7, G4_8, G4_9, G4_10, G4_11, G4_12, G4_13, G4_14, G4_15,
+    G4_16]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:77:55: This simp argument is unused:
+  G4_7
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G4_0, G4_1, G4_2, G4_3, G4_4, G4_5, G4_6, G4_8, G4_9, G4_10, G4_11, G4_12, G4_13, G4_14, G4_15,
+    G4_16]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:77:94: This simp argument is unused:
+  G4_13
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G4_0, G4_1, G4_2, G4_3, G4_4, G4_5, G4_6, G4_7, G4_8, G4_9, G4_10, G4_11, G4_12, G4_14, G4_15,
+    G4_16]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: A246737/Main.lean:77:101: This simp argument is unused:
+  G4_14
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [G4_0, G4_1, G4_2, G4_3, G4_4, G4_5, G4_6, G4_7, G4_8, G4_9, G4_10, G4_11, G4_12, G4_13, G4_15,
+    G4_16]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9035/9036] Built A246737 (4.7s)
+Build completed successfully (9036 jobs).
+EXIT 0
